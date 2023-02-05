@@ -13,7 +13,7 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int get count => images.length;
-  List<String> images = List<String>.generate(10, (counter) => "https://picsum.photos/400/600?random=$counter");
+  List<String> images = List<String>.generate(10, (counter) => url+counter.toString());
 
 
   @override
@@ -46,7 +46,7 @@ class _MainScreenState extends State<MainScreen> {
 
   void load() {
     setState(() {
-      images.addAll(List.generate(10, (counter) => "https://picsum.photos/400/600?random=${images.length+counter}"));
+      images.addAll(List<String>.generate(10, (counter) => url+(images.length+counter).toString()));
     });
   }
 
